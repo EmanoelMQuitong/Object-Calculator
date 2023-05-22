@@ -6,6 +6,8 @@ GREEN = '\033[92m'
 RED = '\033[91m'
 BOLD = '\033[1m'
 END = '\033[0m'
+BORDER = 175*'='
+print(BOLD+PURPLE+BORDER+END)
 
 #Class Calculator Default
 
@@ -17,8 +19,10 @@ class Calculator:
 #Addition function: While loop function, File history
     def addition(calc):
         try:
+            print(BOLD+PURPLE+BORDER+END)
+            print('\n')
             print(BOLD+BLUE+"Enter your first number:"+END)
-            calc.calc.input1 = input(" ")
+            calc.input1 = input(" ")
            
             print(BOLD+BLUE+"Enter your second number:"+END)
             calc.input2 = input(" ")
@@ -36,12 +40,17 @@ class Calculator:
         print('\n')
         print(str(calc.input1) ,"+", str(calc.input2),"=", result)
         history = open('History.txt', 'a')
-        history.write(calc.input1),history.write(' + '), history.write(calc.calc.input2), history.write(' = '), history.write(result), history.write('\n')
-
+        history.write(calc.input1),history.write(' + '), history.write(calc.input2), history.write(' = '), history.write(result), history.write('\n')
+        
+        print('\n')
+        print(BOLD+PURPLE+BORDER+END)
 
 #Subtraction function: WHile loop function
     def subtraction(calc):
         try:
+            print(BOLD+PURPLE+BORDER+END)
+            print('\n')
+
             print(BOLD+BLUE+"Enter your first number:"+END)
             calc.input1 = input(" ")
            
@@ -63,9 +72,15 @@ class Calculator:
         history = open('History.txt', 'a')
         history.write(calc.input1),history.write(' - '), history.write(calc.input2), history.write(' = '), history.write(result), history.write('\n')
 
+        print('\n')
+        print(BOLD+PURPLE+BORDER+END)
+            
 #Multiplication function: While loop function
     def multplication(calc):
         try:
+            print(BOLD+PURPLE+BORDER+END)
+            print('\n')
+
             print(BOLD+BLUE+"Enter your first number:"+END)
             calc.input1 = input(" ")
            
@@ -87,9 +102,15 @@ class Calculator:
         history = open('History.txt', 'a')
         history.write(calc.input1),history.write(' x '), history.write(calc.input2), history.write(' = '), history.write(result), history.write('\n')
 
+        print('\n')
+        print(BOLD+PURPLE+BORDER+END)
+
 #Division function: While loop function
     def division(calc):
         try:
+            print(BOLD+PURPLE+BORDER+END)
+            print('\n')
+
             print(BOLD+BLUE+"Enter your first number:"+END)
             calc.input1 = input(" ")
            
@@ -111,9 +132,7 @@ class Calculator:
         history = open('History.txt', 'a')
         history.write(calc.input1),history.write(' / '), history.write(calc.input2), history.write(' = '), history.write(result), history.write('\n')
 
-Cal1 = Calculator()
-Cal1.addition()
-Cal1.subtraction()
-Cal1.multplication()
-Cal1.division()
+        print('\n')
+        print(BOLD+PURPLE+BORDER+END)
+
         
