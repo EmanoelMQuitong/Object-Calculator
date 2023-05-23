@@ -38,7 +38,7 @@ class Calculator2:
             print('\n')
             print(BOLD + RED + "Non-integer and non-int are cannot be used."+ END )
 
-        
+        calc.result2 = str(int(calc.result2))
         print('\n')
         print(str(calc.input1) ,"+", str(calc.input2),"=", calc.result2)
         history = open('History.txt', 'a')
@@ -68,7 +68,7 @@ class Calculator2:
             print('\n')
             print(BOLD + RED + "Non-integer and non-int are cannot be used."+ END )
     
-        
+        calc.result2 = str(int(calc.result2))
         print('\n')
         print(str(calc.input1) ,"-", str(calc.input2),"=", calc.result2)
         history = open('History.txt', 'a')
@@ -98,7 +98,7 @@ class Calculator2:
             print('\n')
             print(BOLD + RED + "Non-integer and non-int are cannot be used."+ END )
 
-        
+        calc.result2 = str(int(calc.result2))
         print('\n')
         print(str(calc.input1) ,"x", str(calc.input2),"=", calc.result2)
         history = open('History.txt', 'a')
@@ -118,7 +118,8 @@ class Calculator2:
            
             print(BOLD+BLUE+"Enter your second number:"+END)
             calc.input2 = input(" ")
-            calc.result2 = int(calc.input1) / int(calc.input2)," Remainder ", int(calc.input1) % int(calc.input2)
+            calc.result2 = int(calc.input1) / int(calc.input2)
+            remainder = int(calc.input1) % int(calc.input2)
             
     
         except ValueError:
@@ -129,11 +130,11 @@ class Calculator2:
             print('\n')
             print(BOLD + RED + "Non-integer and non-int are cannot be used."+ END )
 
-        
+        calc.result2 = str(int(calc.result2))
         print('\n')
-        print(str(calc.input1) ,"/", str(calc.input2),"=", calc.result2)
+        print(str(calc.input1) ,"/", str(calc.input2),"=", calc.result2, "Remainder", remainder)
         history = open('History.txt', 'a')
-        history.write(calc.input1),history.write(' / '), history.write(calc.input2), history.write(' = '), history.write(calc.result2), history.write('\n')
+        history.write(calc.input1),history.write(' / '), history.write(calc.input2), history.write(' = '), history.write(calc.result2), history.write("Remainder "),history.write(calc.result2),  history.write('\n')
 
         print('\n')
         print(BOLD+BORDER+END)

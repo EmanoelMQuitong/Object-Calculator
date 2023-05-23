@@ -11,11 +11,27 @@ BORDER = 175*'='
 from Calculator import Calculator 
 from Calculator2 import Calculator2
 
+print(BOLD+DARKCYAN+BORDER+END)
+print(BOLD+DARKCYAN+BORDER+END)
+print('\n')
+
+print("CALCULATOR STATUS:")
+print('\n')
+print(BOLD+GREEN+"Calculator 1 is working fine..."+END)
+
+print(BOLD+GREEN+"Calculator 2 is working fine..."+END) 
+
+print('\n')
+print(BOLD+DARKCYAN+BORDER+END)
+print(BOLD+DARKCYAN+BORDER+END)
+
+
 #while loop
 Cal1 = Calculator() 
 response = input("Would you like to open Calculator 1?('yes' or 'no'): ")
 if response == 'yes':
     with open('History.txt', 'a') as History1:
+        History1.write('\n')
         History1.write("Calculator 1 History"), History1.write('\n')
     
     while response == 'yes':
@@ -67,6 +83,9 @@ if response == 'yes':
         print('\n')
         response = input("Would you like to open Calculator 1?('yes' or 'no'): ")
 
+print('\n')
+print(BOLD+RED+"Turning off Calculator 1..."+END)
+print('\n')
 print(BOLD+PURPLE+BORDER+END)
 print(BOLD+PURPLE+BORDER+END)
 
@@ -77,6 +96,7 @@ response = input("Would you like to open Calculator 2?('yes' or 'no'): ")
 
 if response == 'yes':
     with open('History.txt', 'a') as History2:
+        History2.write('\n')
         History2.write("Calculator 2 History"), History2.write('\n')
     
     while response == 'yes':
@@ -128,6 +148,10 @@ if response == 'yes':
         print('\n')
         response = input("Would you like to continue using Calculator 2?('yes' or 'no'): ")
 
+
+print('\n')
+print(BOLD+RED+"Turning off Calculator 2..."+END)
+print('\n')
 
 print(BOLD+BORDER+END)
 print(BOLD+BORDER+END)

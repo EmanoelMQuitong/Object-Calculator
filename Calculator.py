@@ -12,9 +12,10 @@ print(BOLD+PURPLE+BORDER+END)
 #Class Calculator Default
 
 class Calculator:
-    def __init__(calc, input1 = 0,input2 = 0):
+    def __init__(calc, input1 = 0,input2 = 0, result1 = 0):
         calc.input1 = input1
         calc.input2 = input2
+        calc.result1 = result1
 
 #Addition function: While loop function, File history
     def addition(calc):
@@ -36,11 +37,11 @@ class Calculator:
             print('\n')
             print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
 
-        result = "%.3f"%result
+        calc.result1 = "%.3f"%result
         print('\n')
-        print(str(calc.input1) ,"+", str(calc.input2),"=", result)
+        print(str(calc.input1) ,"+", str(calc.input2),"=", calc.result1)
         history = open('History.txt', 'a')
-        history.write(calc.input1),history.write(' + '), history.write(calc.input2), history.write(' = '), history.write(result), history.write('\n')
+        history.write(calc.input1),history.write(' + '), history.write(calc.input2), history.write(' = '), history.write(calc.result1), history.write('\n')
         
         print('\n')
         print(BOLD+PURPLE+BORDER+END)
@@ -66,11 +67,11 @@ class Calculator:
             print('\n')
             print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
     
-        result = "%.3f"%result
+        calc.result1 = "%.3f"%result
         print('\n')
-        print(str(calc.input1) ,"-", str(calc.input2),"=", result)
+        print(str(calc.input1) ,"-", str(calc.input2),"=", calc.result1)
         history = open('History.txt', 'a')
-        history.write(calc.input1),history.write(' - '), history.write(calc.input2), history.write(' = '), history.write(result), history.write('\n')
+        history.write(calc.input1),history.write(' - '), history.write(calc.input2), history.write(' = '), history.write(calc.result1), history.write('\n')
 
         print('\n')
         print(BOLD+PURPLE+BORDER+END)
@@ -96,11 +97,11 @@ class Calculator:
             print('\n')
             print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
 
-        result = "%.3f"%result
+        calc.result1 = "%.3f"%result
         print('\n')
-        print(str(calc.input1) ,"x", str(calc.input2),"=", result)
+        print(str(calc.input1) ,"x", str(calc.input2),"=", calc.result1)
         history = open('History.txt', 'a')
-        history.write(calc.input1),history.write(' x '), history.write(calc.input2), history.write(' = '), history.write(result), history.write('\n')
+        history.write(calc.input1),history.write(' x '), history.write(calc.input2), history.write(' = '), history.write(calc.result1), history.write('\n')
 
         print('\n')
         print(BOLD+PURPLE+BORDER+END)
@@ -126,11 +127,11 @@ class Calculator:
             print('\n')
             print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
 
-        result = "%.3f"%result
+        calc.result1 = "%.3f"%result
         print('\n')
-        print(str(calc.input1) ,"/", str(calc.input2),"=", result)
+        print(str(calc.input1) ,"/", str(calc.input2),"=", calc.result1)
         history = open('History.txt', 'a')
-        history.write(calc.input1),history.write(' / '), history.write(calc.input2), history.write(' = '), history.write(result), history.write('\n')
+        history.write(calc.input1),history.write(' / '), history.write(calc.input2), history.write(' = '), history.write(calc.result1), history.write('\n')
 
         print('\n')
         print(BOLD+PURPLE+BORDER+END)
