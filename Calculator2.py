@@ -134,7 +134,7 @@ class Calculator2:
         print('\n')
         print(str(calc.input1) ,"/", str(calc.input2),"=", calc.result2, "Remainder", remainder)
         history = open('History.txt', 'a')
-        history.write(calc.input1),history.write(' / '), history.write(calc.input2), history.write(' = '), history.write(calc.result2), history.write("Remainder "),history.write(calc.result2),  history.write('\n')
+        history.write(calc.input1),history.write(' / '), history.write(calc.input2), history.write(' = '), history.write(calc.result2), history.write(" Remainder "),history.write(calc.result2),  history.write('\n')
 
         print('\n')
         print(BOLD+BORDER+END)
