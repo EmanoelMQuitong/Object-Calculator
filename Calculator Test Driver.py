@@ -25,6 +25,31 @@ print('\n')
 print(BOLD+DARKCYAN+BORDER+END)
 print(BOLD+DARKCYAN+BORDER+END)
 
+print('\n')
+
+print(BOLD+GREEN+"Calculator 1:"+END)
+print('\n')
+print("Description:")
+print('\n')
+print(" This calculator allow you to perform basic operations such as addition, subtraction, multiplication and division.")
+print("It allows the user to perform basic operations with a three (3) decimal places.")
+print('\n')
+print(BOLD+DARKCYAN+BORDER+END)
+print(BOLD+DARKCYAN+BORDER+END)
+
+
+print('\n')
+
+print(BOLD+GREEN+"Calculator 2:"+END)
+print('\n')
+print("Description:")
+print('\n')
+print(" This calculator allow you to perform basic operations such as addition, subtraction, multiplication and division.")
+print("It allows the user to perform basic operations without any decimal places.")
+print("However, there is a special case in this calculator. When division is used, the remainder will be stated.")
+print('\n')
+print(BOLD+DARKCYAN+BORDER+END)
+print(BOLD+DARKCYAN+BORDER+END)
 
 #while loop
 Cal1 = Calculator() 
