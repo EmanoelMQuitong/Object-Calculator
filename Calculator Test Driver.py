@@ -9,6 +9,7 @@ END = '\033[0m'
 BORDER = 175*'='
 
 from Calculator import Calculator 
+from Calculator2 import Calculator2
 
 #while loop
 Cal1 = Calculator() 
@@ -68,3 +69,65 @@ if response == 'yes':
 
 print(BOLD+PURPLE+BORDER+END)
 print(BOLD+PURPLE+BORDER+END)
+
+
+
+Cal2 = Calculator2() 
+response = input("Would you like to open Calculator 2?('yes' or 'no'): ")
+
+if response == 'yes':
+    with open('History.txt', 'a') as History2:
+        History2.write("Calculator 2 History"), History2.write('\n')
+    
+    while response == 'yes':
+        operation = input("Which operation ('addition', 'subtraction', 'multiplication' or 'division') would you like to use?: ")
+    
+        if operation.lower() == 'addition':
+            Cal2.addition()
+            print('\n')    
+            response = input("Would you like to repeat ADDITION?('yes' or 'no'): ")
+
+            while response == 'yes':
+                Cal2.addition()
+                print('\n')    
+                response = input("Would you like to repeat ADDITION?('yes' or 'no'): ") 
+
+        elif operation.lower() == 'subtraction':
+            Cal2.subtraction()
+            print('\n')    
+            response = input("Would you like to repeat SUBTRACTION?('yes' or 'no'): ")
+
+            while response == 'yes':
+                Cal2.subtraction()
+                print('\n')    
+                response = input("Would you like to repeat SUBTRACTION?('yes' or 'no'): ")
+    
+        elif operation.lower() == 'multiplication':
+            Cal2.multplication()
+            print('\n')    
+            response = input("Would you like to repeat MULTIPLICATION?('yes' or 'no'): ")
+
+            while response == 'yes':
+                Cal2.multplication()
+                print('\n')    
+                response = input("Would you like to repeat MULTIPLICATION?('yes' or 'no'): ")
+        
+        elif operation.lower() == 'division':
+            Cal2.division()
+            print('\n')    
+            response = input("Would you like to repeat DIVISION?('yes' or 'no'): ")
+
+            while response == 'yes':
+                Cal2.division()
+                print('\n')    
+                response = input("Would you like to repeat DIVISION?('yes' or 'no'): ")
+    
+        else:
+            raise Exception(RED+"PLEASE CHOOSE FROM THE FOLLOWING CHOICES ONLY.")
+        
+        print('\n')
+        response = input("Would you like to continue using Calculator 2?('yes' or 'no'): ")
+
+
+print(BOLD+BORDER+END)
+print(BOLD+BORDER+END)
