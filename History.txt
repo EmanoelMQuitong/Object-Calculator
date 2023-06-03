@@ -1,5 +1,0 @@
-
-Calculator 2 History
-99 / 4 = 25 Remainder 3
-9 / 2 = 4 Remainder 1
-100 + 3 = 103
