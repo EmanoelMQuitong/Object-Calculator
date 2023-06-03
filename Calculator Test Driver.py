@@ -8,8 +8,11 @@ BOLD = '\033[1m'
 END = '\033[0m'
 BORDER = 175*'='
 
-from Calculator import Calculator 
-from Calculator2 import Calculator2
+from Calculator import Calculator_Override
+from Calculator2 import Calculator_Override2
+
+
+
 
 print(BOLD+DARKCYAN+BORDER+END)
 print(BOLD+DARKCYAN+BORDER+END)
@@ -54,7 +57,7 @@ print(BOLD+DARKCYAN+BORDER+END)
 print(BOLD+DARKCYAN+BORDER+END)
 
 #while loop
-Cal1 = Calculator() 
+Cal1 = Calculator_Override() 
 response = input("Would you like to open Calculator 1?('yes' or 'no'): ")
 if response == 'yes':
     with open('History.txt', 'a') as History1:
@@ -63,52 +66,153 @@ if response == 'yes':
     
     while response == 'yes':
         operation = input("Which operation ('addition', 'subtraction', 'multiplication' or 'division') would you like to use?: ")
-    
+        
+        print('\n')
+        print(BOLD+DARKCYAN+BORDER+END)
+        print('\n')
+
         if operation.lower() == 'addition':
-            Cal1.addition()
-            print('\n')    
+            input1 = input("Enter your first number:   ")
+            input2 = input("Enter your second number:   ")
+            print('\n')
+            add = Cal1.addition(input1, input2)
+            print(input1, " + ", input2, " = ", add)
+            print('\n')
+
+            history = open('History.txt', 'a')
+            history.write(input1),history.write(' + '), history.write(input2), history.write(' = '), history.write(add), history.write('\n')
+            history.close()
+            
             response = input("Would you like to repeat ADDITION?('yes' or 'no'): ")
+            
 
             while response == 'yes':
-                Cal1.addition()
-                print('\n')    
+                print('\n')
+                print(BOLD+DARKCYAN+BORDER+END)
+                input1 = input("Enter your first number:   ")
+                input2 = input("Enter your second number:   ")
+                print('\n')
+                add = Cal1.addition(input1, input2)
+                print(input1, " + ", input2, " = ", add)
+                
+                print('\n')
+
+                history = open('History.txt', 'a')
+                history.write(input1),history.write(' + '), history.write(input2), history.write(' = '), history.write(add), history.write('\n')
+                history.close()
+
                 response = input("Would you like to repeat ADDITION?('yes' or 'no'): ") 
 
         elif operation.lower() == 'subtraction':
-            Cal1.subtraction()
-            print('\n')    
+            input1 = input("Enter your first number:   ")
+            input2 = input("Enter your second number:   ")
+
+            print('\n')
+
+            subtract = Cal1.subtraction(input1, input2)
+            print(input1, " - ", input2, " = ", subtract)
+            print('\n')
+
+            history = open('History.txt', 'a')
+            history.write(input1),history.write(' - '), history.write(input2), history.write(' = '), history.write(subtract), history.write('\n')
+            history.close()
+
             response = input("Would you like to repeat SUBTRACTION?('yes' or 'no'): ")
 
             while response == 'yes':
-                Cal1.subtraction()
-                print('\n')    
+                print('\n')
+                print(BOLD+DARKCYAN+BORDER+END)
+
+                input1 = input("Enter your first number:   ")
+                input2 = input("Enter your second number:   ")
+                print('\n')
+
+                subtract = Cal1.subtraction(input1, input2)
+                print(input1, " - ", input2, " = ", subtract)
+                print('\n')
+
+                history = open('History.txt', 'a')
+                history.write(input1),history.write(' - '), history.write(input2), history.write(' = '), history.write(subtract), history.write('\n')
+                history.close()
+
                 response = input("Would you like to repeat SUBTRACTION?('yes' or 'no'): ")
     
         elif operation.lower() == 'multiplication':
-            Cal1.multplication()
-            print('\n')    
+            input1 = input("Enter your first number:   ")
+            input2 = input("Enter your second number:   ")
+            product = Cal1.multiplication(input1, input2)
+            print(input1, " x ", input2, " = ", product)
+            print('\n')
+
+            history = open('History.txt', 'a')
+            history.write(input1),history.write(' x '), history.write(input2), history.write(' = '), history.write(product), history.write('\n')
+            history.close()
+
             response = input("Would you like to repeat MULTIPLICATION?('yes' or 'no'): ")
 
             while response == 'yes':
-                Cal1.multplication()
-                print('\n')    
+                print('\n')
+                print(BOLD+DARKCYAN+BORDER+END)
+
+                input1 = input("Enter your first number:   ")
+                input2 = input("Enter your second number:   ")
+
+                print('\n')
+
+                product = Cal1.multiplication(input1, input2)
+                print(input1, " x ", input2, " = ", product)
+                print('\n') 
+
+                history = open('History.txt', 'a')
+                history.write(input1),history.write(' x '), history.write(input2), history.write(' = '), history.write(product), history.write('\n')
+                history.close()
+
                 response = input("Would you like to repeat MULTIPLICATION?('yes' or 'no'): ")
         
         elif operation.lower() == 'division':
-            Cal1.division()
-            print('\n')    
+            input1 = input("Enter your first number:   ")
+            input2 = input("Enter your second number:   ")
+
+            print('\n')
+
+            qoutient = Cal1.division(input1, input2)
+            print(input1, " / ", input2, " = ", qoutient)
+            print('\n')
+
+            history = open('History.txt', 'a')
+            history.write(input1),history.write(' / '), history.write(input2), history.write(' = '), history.write(qoutient), history.write('\n')
+            history.close()
+
             response = input("Would you like to repeat DIVISION?('yes' or 'no'): ")
 
             while response == 'yes':
-                Cal1.division()
-                print('\n')    
+
+                print('\n')
+                print(BOLD+DARKCYAN+BORDER+END)
+
+                input1 = input("Enter your first number:   ")
+                input2 = input("Enter your second number:   ")
+
+                print('\n')
+
+                qoutient = Cal1.division(input1, input2)
+                print(input1, " / ", input2, " = ", qoutient)
+                print('\n')
+
+                history = open('History.txt', 'a')
+                history.write(input1),history.write(' / '), history.write(input2), history.write(' = '), history.write(qoutient), history.write('\n')
+                history.close()
+
                 response = input("Would you like to repeat DIVISION?('yes' or 'no'): ")
     
         else:
             raise Exception(RED+"PLEASE CHOOSE FROM THE FOLLOWING CHOICES ONLY.")
         
+        print(BOLD+DARKCYAN+BORDER+END)
+        print(BOLD+DARKCYAN+BORDER+END)
+
         print('\n')
-        response = input("Would you like to open Calculator 1?('yes' or 'no'): ")
+        response = input("Would you like to continue using Calculator 1?('yes' or 'no'): ")
 
 print('\n')
 print(BOLD+RED+"Turning off Calculator 1..."+END)
@@ -118,7 +222,7 @@ print(BOLD+PURPLE+BORDER+END)
 
 
 
-Cal2 = Calculator2() 
+Cal2 = Calculator_Override2() 
 response = input("Would you like to open Calculator 2?('yes' or 'no'): ")
 
 if response == 'yes':
@@ -128,50 +232,156 @@ if response == 'yes':
     
     while response == 'yes':
         operation = input("Which operation ('addition', 'subtraction', 'multiplication' or 'division') would you like to use?: ")
-    
+        
+        print('\n')
+        print(BOLD+DARKCYAN+BORDER+END)
+        print('\n')
+
         if operation.lower() == 'addition':
-            Cal2.addition()
-            print('\n')    
+
+            input1 = input("Enter your first number:   ")
+            input2 = input("Enter your second number:   ")
+            print('\n')
+            add = Cal2.addition(input1, input2)
+            print(input1, " + ", input2, " = ", add)
+            print('\n')
+
+            history = open('History.txt', 'a')
+            history.write(input1),history.write(' + '), history.write(input2), history.write(' = '), history.write(add), history.write('\n')
+            history.close()
+
             response = input("Would you like to repeat ADDITION?('yes' or 'no'): ")
+            
 
             while response == 'yes':
-                Cal2.addition()
-                print('\n')    
+                print('\n')
+                print(BOLD+PURPLE+BORDER+END)
+
+                input1 = input("Enter your first number:   ")
+                input2 = input("Enter your second number:   ")
+
+                print('\n')
+
+                add = Cal2.addition(input1, input2)
+                print(input1, " + ", input2, " = ", add)
+                
+                print('\n')
+
+                history = open('History.txt', 'a')
+                history.write(input1),history.write(' + '), history.write(input2), history.write(' = '), history.write(add), history.write('\n')
+                history.close()
+
                 response = input("Would you like to repeat ADDITION?('yes' or 'no'): ") 
 
         elif operation.lower() == 'subtraction':
-            Cal2.subtraction()
-            print('\n')    
+            input1 = input("Enter your first number:   ")
+            input2 = input("Enter your second number:   ")
+
+            print('\n')
+
+            subtract = Cal2.subtraction(input1, input2)
+            print(input1, " - ", input2, " = ", subtract)
+            print('\n')
+
+            history = open('History.txt', 'a')
+            history.write(input1),history.write(' - '), history.write(input2), history.write(' = '), history.write(subtract), history.write('\n')
+            history.close()
             response = input("Would you like to repeat SUBTRACTION?('yes' or 'no'): ")
 
             while response == 'yes':
-                Cal2.subtraction()
-                print('\n')    
+                print('\n')
+                print(BOLD+PURPLE+BORDER+END)
+
+                input1 = input("Enter your first number:   ")
+                input2 = input("Enter your second number:   ")
+                print('\n')
+
+                subtract = Cal2.subtraction(input1, input2)
+                print(input1, " - ", input2, " = ", subtract)
+                print('\n')
+
+                history = open('History.txt', 'a')
+                history.write(input1),history.write(' - '), history.write(input2), history.write(' = '), history.write(subtract), history.write('\n')
+                history.close()
+
                 response = input("Would you like to repeat SUBTRACTION?('yes' or 'no'): ")
     
         elif operation.lower() == 'multiplication':
-            Cal2.multplication()
-            print('\n')    
+            input1 = input("Enter your first number:   ")
+            input2 = input("Enter your second number:   ")
+            product = Cal2.multiplication(input1, input2)
+            print(input1, " x ", input2, " = ", product)
+            print('\n')
+
+            history = open('History.txt', 'a')
+            history.write(input1),history.write(' x '), history.write(input2), history.write(' = '), history.write(product), history.write('\n')
+            history.close()
+
             response = input("Would you like to repeat MULTIPLICATION?('yes' or 'no'): ")
 
             while response == 'yes':
-                Cal2.multplication()
-                print('\n')    
+                print('\n')
+                print(BOLD+PURPLE+BORDER+END)
+
+                input1 = input("Enter your first number:   ")
+                input2 = input("Enter your second number:   ")
+
+                print('\n')
+
+                product = Cal2.multiplication(input1, input2)
+                print(input1, " x ", input2, " = ", product)
+                print('\n') 
+
+                history = open('History.txt', 'a')
+                history.write(input1),history.write(' x '), history.write(input2), history.write(' = '), history.write(product), history.write('\n')
+                history.close()
+
                 response = input("Would you like to repeat MULTIPLICATION?('yes' or 'no'): ")
         
         elif operation.lower() == 'division':
-            Cal2.division()
-            print('\n')    
+            input1 = input("Enter your first number:   ")
+            input2 = input("Enter your second number:   ")
+
+            print('\n')
+
+            qoutient = Cal2.division(input1, input2)
+            remainder = Cal2.div_rem(input1, input2)
+            print(input1, " / ", input2, " = ", qoutient, " Remainder ", remainder)
+            print('\n')
+
+            history = open('History.txt', 'a')
+            history.write(input1),history.write(' / '), history.write(input2), history.write(' = '), history.write(qoutient), history.write(" Remainder "),history.write(remainder),  history.write('\n')
+            history.close()
+
             response = input("Would you like to repeat DIVISION?('yes' or 'no'): ")
 
             while response == 'yes':
-                Cal2.division()
-                print('\n')    
+
+                print('\n')
+                print(BOLD+PURPLE+BORDER+END)
+
+                input1 = input("Enter your first number:   ")
+                input2 = input("Enter your second number:   ")
+
+                print('\n')
+
+                qoutient = Cal2.division(input1, input2)
+                remainder = Cal2.div_rem(input1, input2)
+                print(input1, " / ", input2, " = ", qoutient, " Remainder ", remainder)
+                print('\n')
+
+                history = open('History.txt', 'a')
+                history.write(input1),history.write(' / '), history.write(input2), history.write(' = '), history.write(qoutient), history.write(" Remainder "),history.write(remainder),  history.write('\n')
+                history.close()
+
                 response = input("Would you like to repeat DIVISION?('yes' or 'no'): ")
     
         else:
             raise Exception(RED+"PLEASE CHOOSE FROM THE FOLLOWING CHOICES ONLY.")
         
+        print(BOLD+PURPLE+BORDER+END)
+        print(BOLD+PURPLE+BORDER+END)
+
         print('\n')
         response = input("Would you like to continue using Calculator 2?('yes' or 'no'): ")
 

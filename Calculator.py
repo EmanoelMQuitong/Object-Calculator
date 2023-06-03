@@ -136,4 +136,28 @@ class Calculator:
         print('\n')
         print(BOLD+PURPLE+BORDER+END)
 
-        
+class Calculator_Override(Calculator):
+    def __init__(calc, input1 = 0,input2 = 0, result1 = 0):
+        calc.input1 = input1
+        calc.input2 = input2
+        calc.result1 = result1
+
+    def addition(calc, input1, input2):
+        result = float(input1) + float(input2)
+        result = "%.3f"%result
+        return result
+
+    def subtraction(calc, input1, input2):
+        result = float(input1) - float(input2)
+        result = "%.3f"%result
+        return result
+
+    def multiplication(calc, input1, input2):
+        result = float(input1) * float(input2)
+        result = "%.3f"%result
+        return result
+
+    def division(calc, input1, input2):
+        result = float(input1) / float(input2)
+        result = "%.3f"%result
+        return result  
